@@ -1,4 +1,4 @@
-import { click } from '@testing-library/user-event/dist/click';
+
 import React, { useState, useEffect } from 'react';
 import reactDom from 'react-dom';
 
@@ -30,10 +30,7 @@ function App() {
         <button onClick={() => setStart(true)}>Start</button>
         <button onClick={() => setStart(false)}>Stop</button>
         <button onClick={() => { setTime(0); setStart(false); }}>Reset</button>
-        <button onClick={(e) => {
-          const dablClick = e.currentTarget;
-          if(dablClick = 2) { setStart(false); setInterval(300) }
-        }}>Wait</button>
+        <button onClick={(e) => {if (e.detail === 2) {setStart(false);}}}>Wait</button>
       </div>
     </div>
     
